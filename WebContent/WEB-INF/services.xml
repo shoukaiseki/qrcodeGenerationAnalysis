@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://xfire.codehaus.org/config/1.0">
+	<service>
+		<name>Upload</name>
+		<namespace>http://shuto.com/mam/webclient/serverclient/upload
+		</namespace>
+		<serviceClass>com.shuto.mam.webclient.webservices.UploadDataService
+		</serviceClass>
+		<implementationClass>
+			com.shuto.mam.webclient.webservices.impl.UploadDataServiceImpl
+		</implementationClass>
+	</service>
+
+	<service>
+		<name>Send</name>
+		<namespace>http://shuto.com/mam/webclient/serverclient/SendDataServer
+		</namespace>
+		<serviceClass>com.shuto.mam.webclient.webservices.SendDataServer
+		</serviceClass>
+		<implementationClass>
+			com.shuto.mam.webclient.webservices.impl.SendDataServerImpl
+		</implementationClass>
+	</service>
+
+	<service>
+		<name>Query</name>
+		<namespace>http://shuto.com/mam/webclient/serverclient/qyery
+		</namespace>
+		<serviceClass>com.shuto.mam.webclient.webservices.QueryService
+		</serviceClass>
+		<implementationClass>
+			com.shuto.mam.webclient.webservices.impl.QueryServiceImpl
+		</implementationClass>
+	</service>
+
+	<service>
+		<name>WorkflowAction</name>
+		<namespace>http://shuto.com/mam/webclient/serverclient/workflowaction
+		</namespace>
+		<serviceClass>com.shuto.mam.webclient.webservices.WorkflowActionService
+		</serviceClass>
+		<implementationClass>
+			com.shuto.mam.webclient.webservices.impl.WorkflowActionServiceImpl
+		</implementationClass>
+	</service>
+	
+	<service>
+		<name>saycxf</name>
+		<namespace>http://testcxf.com/testcxf/hello/say
+		</namespace>
+		<serviceClass>com.sks.testcxf.HelloWorld</serviceClass>
+		<implementationClass>com.sks.testcxf.imp.HelloWorldWs</implementationClass>
+	</service>
+	
+<!--
+	<service>
+	    <name>AccountService</name>
+		<serviceClass>com.sense.hqc.webservice.impl.AccountServiceImpl
+		</serviceClass>
+		<wsdlURL>AccountService.xml</wsdlURL>
+		<serviceFactory>org.codehaus.xfire.jaxb2.JaxbServiceFactory
+		</serviceFactory>
+	</service>
+	-->
+</beans>

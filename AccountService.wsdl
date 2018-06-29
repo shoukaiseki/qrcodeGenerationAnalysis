@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://impl.webservice.hqc.sense.com" xmlns:ns2="http://req.hqc.sense.com" xmlns:ns1="http://model.hqc.sense.com" xmlns:ns3="http://resp.rep.hqc.sense.com" xmlns:soapenc12="http://www.w3.org/2003/05/soap-encoding" xmlns:tns="http://impl.webservice.hqc.sense.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc11="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+  <wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://req.hqc.sense.com">
+<xsd:complexType name="ModifyAccountRequest">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="accountInfo" nillable="true" type="ns1:AccountInfo"/>
+<xsd:element minOccurs="0" name="requestID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="validationCode" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ReconciliationAccountRequest">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="accountInfo" nillable="true" type="ns1:AccountInfo"/>
+<xsd:element minOccurs="0" name="requestID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="validationCode" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="AddAccountRequest">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="accountInfo" nillable="true" type="ns1:AccountInfo"/>
+<xsd:element minOccurs="0" name="requestID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="validationCode" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="TestConnectionRequest">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="requestID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="validationCode" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="RestoreAccountRequest">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="appID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="requestID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="validationCode" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ChangePasswordtRequest">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="appID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="newPassword" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="requestID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="validationCode" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="SuspendAccountRequest">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="appID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="requestID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="validationCode" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="DeleteAccountRequest">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="appID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="requestID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="validationCode" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://model.hqc.sense.com">
+<xsd:complexType name="AccountInfo">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="appID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="cn" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="companyID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="jobNumber" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="mail" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="orgaNumber" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="pinYin" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userAddress" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userBirthday" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userEmpNumber" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userEntryTime" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userGenDer" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userHomePhone" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userIDNumber" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userLeaveTime" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userLevel" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userMianPostID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userOfficePhone" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userOperateTime" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userParJobNumber" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userPartPostID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userPassword" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userPhone" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userRnterTime" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userState" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="usergroup" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfAccountInfo">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="AccountInfo" nillable="true" type="ns1:AccountInfo"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://impl.webservice.hqc.sense.com">
+<xsd:element name="modifyAccount">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="request" nillable="true" type="ns2:ModifyAccountRequest"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="modifyAccountResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:ModifyAccountResponse"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="reconciliationAccount">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="request" nillable="true" type="ns2:ReconciliationAccountRequest"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="reconciliationAccountResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:ReconciliationAccountResponse"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="addAccount">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="request" nillable="true" type="ns2:AddAccountRequest"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="addAccountResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:AddAccountResponse"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="testConnection">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="request" nillable="true" type="ns2:TestConnectionRequest"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="testConnectionResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:TestConnectionResponse"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="restoreAccount">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="request" nillable="true" type="ns2:RestoreAccountRequest"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="restoreAccountResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:RestoreAccountResponse"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="changePassword">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="request" nillable="true" type="ns2:ChangePasswordtRequest"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="changePasswordResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:ChangePasswordResponse"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="suspendAccount">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="request" nillable="true" type="ns2:SuspendAccountRequest"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="suspendAccountResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:SuspendAccountResponse"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="deleteAccount">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="request" nillable="true" type="ns2:DeleteAccountRequest"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="deleteAccountResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:DeleteAccountResponse"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://resp.rep.hqc.sense.com">
+<xsd:complexType name="ModifyAccountResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="requestID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="returnCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="returnFlag" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="returnMessage" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ReconciliationAccountResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="accountInfoList" nillable="true" type="ns1:ArrayOfAccountInfo"/>
+<xsd:element minOccurs="0" name="accountInfoSize" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="requestID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="returnCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="returnFlag" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="returnMessage" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="AddAccountResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="requestID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="returnCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="returnFlag" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="returnMessage" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="TestConnectionResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="requestID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="returnCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="returnFlag" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="returnMessage" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="RestoreAccountResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="requestID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="returnCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="returnFlag" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="returnMessage" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ChangePasswordResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="requestID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="returnCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="returnFlag" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="returnMessage" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="SuspendAccountResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="requestID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="returnCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="returnFlag" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="returnMessage" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="DeleteAccountResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="requestID" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="returnCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="returnFlag" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="returnMessage" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="testConnectionRequest">
+    <wsdl:part name="parameters" element="tns:testConnection"/>
+  </wsdl:message>
+  <wsdl:message name="suspendAccountRequest">
+    <wsdl:part name="parameters" element="tns:suspendAccount"/>
+  </wsdl:message>
+  <wsdl:message name="deleteAccountResponse">
+    <wsdl:part name="parameters" element="tns:deleteAccountResponse"/>
+  </wsdl:message>
+  <wsdl:message name="testConnectionResponse">
+    <wsdl:part name="parameters" element="tns:testConnectionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="restoreAccountRequest">
+    <wsdl:part name="parameters" element="tns:restoreAccount"/>
+  </wsdl:message>
+  <wsdl:message name="addAccountResponse">
+    <wsdl:part name="parameters" element="tns:addAccountResponse"/>
+  </wsdl:message>
+  <wsdl:message name="reconciliationAccountRequest">
+    <wsdl:part name="parameters" element="tns:reconciliationAccount"/>
+  </wsdl:message>
+  <wsdl:message name="deleteAccountRequest">
+    <wsdl:part name="parameters" element="tns:deleteAccount"/>
+  </wsdl:message>
+  <wsdl:message name="reconciliationAccountResponse">
+    <wsdl:part name="parameters" element="tns:reconciliationAccountResponse"/>
+  </wsdl:message>
+  <wsdl:message name="addAccountRequest">
+    <wsdl:part name="parameters" element="tns:addAccount"/>
+  </wsdl:message>
+  <wsdl:message name="restoreAccountResponse">
+    <wsdl:part name="parameters" element="tns:restoreAccountResponse"/>
+  </wsdl:message>
+  <wsdl:message name="changePasswordResponse">
+    <wsdl:part name="parameters" element="tns:changePasswordResponse"/>
+  </wsdl:message>
+  <wsdl:message name="modifyAccountRequest">
+    <wsdl:part name="parameters" element="tns:modifyAccount"/>
+  </wsdl:message>
+  <wsdl:message name="changePasswordRequest">
+    <wsdl:part name="parameters" element="tns:changePassword"/>
+  </wsdl:message>
+  <wsdl:message name="modifyAccountResponse">
+    <wsdl:part name="parameters" element="tns:modifyAccountResponse"/>
+  </wsdl:message>
+  <wsdl:message name="suspendAccountResponse">
+    <wsdl:part name="parameters" element="tns:suspendAccountResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="AccountServicePortType">
+    <wsdl:operation name="modifyAccount">
+      <wsdl:input name="modifyAccountRequest" message="tns:modifyAccountRequest"/>
+      <wsdl:output name="modifyAccountResponse" message="tns:modifyAccountResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="reconciliationAccount">
+      <wsdl:input name="reconciliationAccountRequest" message="tns:reconciliationAccountRequest"/>
+      <wsdl:output name="reconciliationAccountResponse" message="tns:reconciliationAccountResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="addAccount">
+      <wsdl:input name="addAccountRequest" message="tns:addAccountRequest"/>
+      <wsdl:output name="addAccountResponse" message="tns:addAccountResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="testConnection">
+      <wsdl:input name="testConnectionRequest" message="tns:testConnectionRequest"/>
+      <wsdl:output name="testConnectionResponse" message="tns:testConnectionResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="restoreAccount">
+      <wsdl:input name="restoreAccountRequest" message="tns:restoreAccountRequest"/>
+      <wsdl:output name="restoreAccountResponse" message="tns:restoreAccountResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="changePassword">
+      <wsdl:input name="changePasswordRequest" message="tns:changePasswordRequest"/>
+      <wsdl:output name="changePasswordResponse" message="tns:changePasswordResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="suspendAccount">
+      <wsdl:input name="suspendAccountRequest" message="tns:suspendAccountRequest"/>
+      <wsdl:output name="suspendAccountResponse" message="tns:suspendAccountResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAccount">
+      <wsdl:input name="deleteAccountRequest" message="tns:deleteAccountRequest"/>
+      <wsdl:output name="deleteAccountResponse" message="tns:deleteAccountResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AccountServiceHttpBinding" type="tns:AccountServicePortType">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="modifyAccount">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="modifyAccountRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="modifyAccountResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reconciliationAccount">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="reconciliationAccountRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="reconciliationAccountResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addAccount">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="addAccountRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addAccountResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testConnection">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="testConnectionRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="testConnectionResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="restoreAccount">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="restoreAccountRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="restoreAccountResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changePassword">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="changePasswordRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="changePasswordResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="suspendAccount">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="suspendAccountRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="suspendAccountResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAccount">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="deleteAccountRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteAccountResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AccountService">
+    <wsdl:port name="AccountServiceHttpPort" binding="tns:AccountServiceHttpBinding">
+      <wsdlsoap:address location="http://localhost:8080/app/service/AccountService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
