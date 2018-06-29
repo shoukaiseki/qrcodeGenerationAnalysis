@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="maximowebservice" default="compile" basedir=".">
-	<typedef resource="org/jetbrains/kotlin/ant/antlib.xml" classpath="lib/kotlin-ant.jar"/>
 	<!-- Sets variables which can later be used. -->
 	<!-- The value of a property is accessed via ${} -->
 	<property name="jar_path" location="WebContent/WEB-INF/lib" />
@@ -8,8 +7,6 @@
 	<property name="src_dir" location="src" />
 	<property name="build_dir" location="WebContent/WEB-INF/classes" />
 	
-	<property name="maximobin_dir" location="maximobin" />
-	<property name="maximosrc_dir" location="maximosrc" />
 	
 	
 	<!--
@@ -23,18 +20,16 @@
 	<!-- Deletes the existing build, docs and dist directory-->
 	<target name="clean">
 		<delete dir="${build_dir}" />
-		<delete dir="${maximobin_dir}" />
 	</target>
 
 	<!-- Creates the  build, docs and dist directory-->
 	<target name="makedir">
 		<mkdir dir="${build_dir}" />
-		<mkdir dir="${maximobin_dir}" />
 	</target>
 
 	<!-- Compiles the java code (including the usage of library for JUnit -->
 	<target name="compile" depends="clean, makedir">
-		<javac target="1.7" srcdir="${src_dir}" destdir="${build_dir}" includeantruntime="true">
+		<javac target="1.7" srcdir="${src_dir}" destdir="${build_dir}" includeantruntime="true" debug="true">
 			<!--给编译器指定编码，防止出现："警告： 编码 GBK 的不可映射字符"-->
 			<compilerarg line="-encoding UTF-8 "/>
 			<classpath> 
@@ -45,21 +40,6 @@
 				<fileset dir="${j2ee_path}">
 				</fileset> 
 			</classpath> 
-			<withKotlin>
-			</withKotlin>
-		</javac>
-		<javac target="1.7"  destdir="${maximobin_dir}"  includeantruntime="true" debug="true" srcdir="${maximosrc_dir}" >
-			<compilerarg line="-encoding UTF-8 "/>
-				<classpath> 
-					<pathelement path="${maximobin_dir}"/> 
-					<fileset dir="${jar_path}">
-						<include name="**/*.jar"/> 
-					</fileset> 
-					<fileset dir="${j2ee_path}">
-					</fileset> 
-				</classpath> 
-			<withKotlin>
-			</withKotlin>
 		</javac>
 		<copy todir="${build_dir}">
 			<fileset dir="${src_dir}">

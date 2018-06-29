@@ -1,7 +1,9 @@
-<%@ page language="java" import="java.util.*,java.net.URL" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*,java.net.URL,com.google.zxing.Result" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+System.out.println(request.getAttribute("rm"));
+Result result=(Result)request.getAttribute("result");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -9,7 +11,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>qrcode 生成</title>
+    <title>显示二维码信息</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -22,19 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-   <textarea id="topictextarea" rows="5" cols="134" name="codemsg" form="qrcode_generate" >01000600010
-ds:光纤电缆</textarea>
-
-    <form id="qrcode_generate" action="<%=basePath%>servlet/qrcode/make" method="get" target="qrcodeimg">
-	  <input type="submit" value="生成二维码" />
-	</form>
-	
-	
-	<br />
-	<iframe src="<%=basePath%>servlet/qrcode/make" name="qrcodeimg" width="400" height="400"></iframe>
-   
-	
-
+	<textarea  style= "overflow:hidden; " id="topictextarea" rows="15" cols="50" name="codemsg"  ><%=result.getText()%></textarea>
   </body>
   
   
