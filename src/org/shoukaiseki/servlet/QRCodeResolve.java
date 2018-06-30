@@ -49,7 +49,8 @@ public class QRCodeResolve  extends HttpServlet {
         ServletConfig config = this.getServletConfig();
         String filetemp=config.getInitParameter("temppath");
         File filetemppath=new File(filetemp);
-        if(filetemppath.exists()){
+        //缓存目录不存在则删除
+        if(!filetemppath.exists()){
             filetemppath.mkdirs();
         }
 
