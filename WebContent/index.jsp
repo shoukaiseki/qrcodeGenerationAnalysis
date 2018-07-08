@@ -22,7 +22,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    WebService <br>
+    Hello World <br>
+	<br>
+	java.vm.name=<%=System.getProperty("java.vm.name")%>
     JVM版本= <%=System.getProperty("java.version", "not specified")%><br>
     JVM缺省路径=<%=System.getProperty("java.home", "not specified")%>
 	<br>
@@ -30,18 +32,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<br>
 	java.class.version=<%=System.getProperty("java.class.version")%>
 	<br>
-	Java 虚拟机中的内存总量=<%=Runtime.getRuntime().totalMemory()/1024/1024%>
+	Java 虚拟机中的内存总量=<%=Runtime.getRuntime().totalMemory()/1024/1024%>MB
 	<br>
-	Java 虚拟机试图使用的最大内存量=<%=Runtime.getRuntime().maxMemory()/1024/1024%>
+	Java 虚拟机试图使用的最大内存量=<%=Runtime.getRuntime().maxMemory()/1024/1024%>MB
 	<br>
-	Java 虚拟机中的空闲内存量=<%=Runtime.getRuntime().freeMemory()/1024/1024%>
-	<br />
-	<a href="<%=basePath%>mkqrcode.jsp" target="_blank">生成二维码</a>
-	<br />
-	<a href="resolveqrcode.jsp" target="_blank">解析二维码</a>
-	<br />
+	Java 虚拟机中的空闲内存量=<%=Runtime.getRuntime().freeMemory()/1024/1024%>MB
+
   </body>
-  
-  
-  
 </html>
